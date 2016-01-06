@@ -10,12 +10,12 @@ type CameraController () =
     let mutable player: GameObject = null
 
 
-    member val offset = Vector3.one with get, set
+    let mutable offset = Vector3.one
 
 
     member this.Start () = 
-        this.offset <- this.transform.position - player.transform.position
+        offset <- this.transform.position - player.transform.position
 
 
     member this.LateUpdate () =
-        this.transform.position <- player.transform.position + this.offset
+        this.transform.position <- player.transform.position + offset

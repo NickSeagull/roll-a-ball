@@ -52,10 +52,13 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="Controllers\CameraController.fs" />
+    <Compile Include="Controllers\PlayerController.fs" />
+    <Compile Include="Controllers\PickUpController.fs" />
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="PlayerController.fs" />
     <Content Include="packages.config" />
-    <Compile Include="CameraController.fs" />
+    <Compile Include="Models\Player.fs" />
+    <Compile Include="Models\Position.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsUnit.NUnit">
@@ -73,6 +76,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\..\Program Files\Unity\Editor\Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
